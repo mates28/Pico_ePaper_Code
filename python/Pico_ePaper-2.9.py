@@ -651,17 +651,17 @@ class EPD_2in9_Landscape(framebuf.FrameBuffer):
         self.delay_ms(2000)
         self.module_exit()
 
-'''if __name__=='__main__':
+if __name__=='__main__':
     # Landscape
     epd = EPD_2in9_Landscape()
     epd.Clear(0xff)
     
-    epd.fill(0x00)
-    epd.text("Waveshare", 5, 10, 0xff)
-    epd.text("Pico_ePaper-2.9", 5, 20, 0xff)
-    epd.text("Raspberry Pico", 5, 30, 0xff)
+    epd.fill(0xff)
+    epd.text("Waveshare", 5, 10, 0x00)
+    epd.text("Pico_ePaper-2.9", 5, 20, 0x00)
+    epd.text("Raspberry Pico", 5, 30, 0x00)
     epd.display(epd.buffer)
-    epd.delay_ms(20000)
+    epd.delay_ms(2000)
     
     epd.vline(10, 40, 60, 0x00)
     epd.vline(120, 40, 60, 0x00)
@@ -728,4 +728,4 @@ class EPD_2in9_Landscape(framebuf.FrameBuffer):
     epd.Clear(0xff)
     epd.delay_ms(2000)
     print("sleep")
-    epd.sleep()'''
+    epd.sleep()
