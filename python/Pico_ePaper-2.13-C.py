@@ -32,8 +32,8 @@ import framebuf
 import utime
 
 
-EPD_WIDTH       = 104
-EPD_HEIGHT      = 212
+EPD_WIDTH       = 212
+EPD_HEIGHT      = 104
 
 RST_PIN         = 12
 DC_PIN          = 8
@@ -46,8 +46,8 @@ class EPD_2in13_C:
         
         self.busy_pin = Pin(BUSY_PIN, Pin.IN, Pin.PULL_UP)
         self.cs_pin = Pin(CS_PIN, Pin.OUT)
-        self.width = EPD_WIDTH
-        self.height = EPD_HEIGHT
+        self.width = EPD_HEIGHT #EPD_WIDTH
+        self.height = EPD_WIDTH #EPD_HEIGHT
         
         self.spi = SPI(1)
         self.spi.init(baudrate=4000_000)
@@ -190,7 +190,7 @@ if __name__=='__main__':
     epd.imageblack.rect(10, 150, 40, 40, 0x00)
     epd.imageyellow.fill_rect(60, 150, 40, 40, 0x00)
     epd.display()
-    epd.delay_ms(2000)
+    epd.delay_ms(20000)
         
     epd.Clear(0xff, 0xff)
     epd.delay_ms(2000)
